@@ -213,7 +213,6 @@ public class YZHdemo {
 
         // 配置请求参数
         CreateBatchOrderRequest request = new CreateBatchOrderRequest();
-        List<BatchOrderInfo> orderList = new ArrayList<>();
         BatchOrderInfo info1 = new BatchOrderInfo();
         BatchOrderInfo info2 = new BatchOrderInfo();
         info1.setOrderId("202009010016562010011");
@@ -233,17 +232,17 @@ public class YZHdemo {
         info2.setNotifyUrl(paramsMap.get("withdrawCallBackUrl"));
 
         // 转换为 Integer 数组
-        BatchOrderInfo[] orderArray = orderList.stream().toArray(BatchOrderInfo[]::new);
+        BatchOrderInfo[] infoArry = new BatchOrderInfo[2];
+        infoArry[0] = info1;
+        infoArry[1] = info2;
 
-        orderList.add(info1);
-        orderList.add(info2);
         request.setBatchId("batch2032934858005");
         request.setDealerId(paramsMap.get("dealerId"));
         request.setBrokerId(paramsMap.get("brokerId"));
         request.setChannel(YZHWithdrawChannelEnum.BANK_PAY.getChannelZhName());
-        request.setTotalPay("120.00");
-        request.setTotalCount("3");
-        request.setOrderList(orderArray);
+        request.setTotalPay("110.00");
+        request.setTotalCount("2");
+        request.setOrderList(infoArry);
 
         YzhResponse<CreateBatchOrderResponse> response;
         try {
