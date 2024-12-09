@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.party.thirdpartyproject.mapper.ThirdPartyParamMapper">
+  <resultMap id="BaseResultMap" type="com.party.thirdpartyproject.model.ThirdPartyParam">
+      <id column="id" property="id" jdbcType="BIGINT" />
+      <result column="third_party_no" property="thirdPartyNo" jdbcType="VARCHAR" />
+      <result column="param_name" property="paramName" jdbcType="VARCHAR" />
+      <result column="param_value" property="paramValue" jdbcType="VARCHAR" />
+      <result column="param_info" property="paramInfo" jdbcType="VARCHAR" />
+      <result column="remark" property="remark" jdbcType="VARCHAR" />
+      <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+      <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+    <insert id="initTableRecord">
+        INSERT INTO `third_party`.`third_party_param` (`third_party_no`, `param_name`, `param_value`, `param_info`)
+        VALUES ('1001', 'dealerId', '27631898', '平台企业ID'),
+               ('1001', 'dealerId', '27631898', '平台企业ID'),
+               ('1001', 'brokerId', '27532644', '综合服务主体ID'),
+               ('1001', 'appKey', 'N491w1DvASmLG4UcELjRG68NcjWVVQ23', '签名密钥'),
+               ('1001', 'threeDesKey', 'v6DsaJxsKeOgQ89Ym04W156y', '签名密钥'),
+               ('1001', 'rsaPrivateKey',
+                'MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDvve7MSadw/RcXGsgm2fiHcBjorSNZVqpP1DTaMY3Gcx+c/8Xtt8dOb6Y8iyBqbEgzDZkouTmE+rGuqoIl6Wpic2xxqAB2RCjVXIY8Q1XjS7QSn5vNlBGfCoa2y3y4y8Np5nziu5iIpSb2RAsUdn5SjnwwivBYuRolHtuESV7grIoQimSzZ4g7OUe5eI5whem6GM2DPwwzIY4Bt7lqLficmDsE7/v3TuxuQBTmHmDmjR5dKIxp30YGbAbcNdnu5fMNQ3uwy7hOJzpXE2tBe6t3+L35ocAdgFTpW12LgYo4n3H4RKQHFwUpjIEn+x8BndsCYHzY6IemB+8lauSzaP97AgMBAAECggEBAJF512Xva8OMUG6cuceZjM3in7rRFRopFL/MLSYZ28YIJa7HJfvSAQb/iQhEBC+P9V/FaKLlgpnG5frvTHpk4UFMeQmewGkDgyO1OV9oHL4IOgTzBUACEY9Ie+aAI/ae7r1cN3v+CdkhHjthnreUD6NZAtMR/DZaXBsaVmo3e3MpEvd01ktwyw27VRo3Cr0by2tzxYvjaEDPdhhA3axTTbP1A+tS5WXJjDpXG81BE82HI26ihDC4k3VwE3Mf7AETmr1/arDAhBS4YtEB67S1k9pitwFDP8h02s/Osgasd3aQL3kVBAlc6Y0C1x4g3+b/YI4OPz+FJHO3xJt+4DnEeMECgYEA/r82iVRc8T0eu1eHWmDbsJcYnYqdlrXJrr9NE+prJ9GNKJdwtqDOZmB5e5m5Uw4yY6EMjSV5q90loMk7srT0b6M73YFL7MIA3oXFJGBoF+sFi9vMrs4xH1HAOk+lWzNStwMon/nZ6RkRgmQbOdiUGJhmcD/hvX7h2srpS+xkp80CgYEA8OvTLRkPfewW7Nr9K7ESP0UZGzgsh76YC+kf4jvuUaXKzWrTrC0nx0cShRU1TthwP+y8wgOvEF0PV0X9m/eqx/OsACKNaUEWZaUW4qvr6zOb5YMqzmOfHUE7pbJrdwxBGq90TZovPNtON1sgVSu4f1PkOyq9U7NND9omKaObbGcCgYEAkq+2DoO2dO6VyJhRBxiox9lpQiX0MjkBJg9fqa0dALOoTYxOScr0rny01xggX5PYLggpOwkuM2lG5nuZVYDfE31x1k1CU9UuPPPYHecpaURaUDtDdBCktn0TbEA6XfaClYFLHjr3YEKgE23jQ37TYAo5Sj9uk/gAw0R968r19q0CgYAIHenfexiqhWnAUSB2eGDFAO73m8zkReeZfyEz3hEJbyyF/zNieaL9c8eL9Er3fRNLFA7H+pfLVVdO+Wyx9IYsdmk1F/TrtuWqRwWeXWx1YCfAc8rdaT3THn+D9Z7pQ+BtpbulYax1wG3CL6/HLtHoeEsYMzhtuXy/K/pdLMXvwQKBgQCWbFbVEVstQqS3sf4KiZ47OlzODGrkQT4dogSsy3SekDLyEZ8NxgKa/Omr6yjpfl6cshd5vI7/3CARvRg9FnQnaWEeXNXb/Yg4oVJ8BUG2RYoYPSxL+ZVdxWP4HGRWjpBNNQLl9HBNm2h4tzLlOEHVxxDk0YE84NcifxgE1Tvp3g==',
+                'RSA私钥'),
+               ('1001', 'rsaPublicKey',
+                'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA773uzEmncP0XFxrIJtn4h3AY6K0jWVaqT9Q02jGNxnMfnP/F7bfHTm+mPIsgamxIMw2ZKLk5hPqxrqqCJelqYnNscagAdkQo1VyGPENV40u0Ep+bzZQRnwqGtst8uMvDaeZ84ruYiKUm9kQLFHZ+Uo58MIrwWLkaJR7bhEle4KyKEIpks2eIOzlHuXiOcIXpuhjNgz8MMyGOAbe5ai34nJg7BO/7907sbkAU5h5g5o0eXSiMad9GBmwG3DXZ7uXzDUN7sMu4Tic6VxNrQXurd/i9+aHAHYBU6Vtdi4GKOJ9x+ESkBxcFKYyBJ/sfAZ3bAmB82OiHpgfvJWrks2j/ewIDAQAB',
+                'RSA公钥'),
+               ('1001', 'callbackPublicKey',
+                'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOO28UyZ6vZYwQm3IvswdvtDJ+DQc7ntWtUJC9BD1InqRS9YXW+PC6MFa1TFXnlr1fbDz+WfjtK80c8yVIKKYYZoUtdruEnXkTqaK4sbku0OrEV6i21RokdfRbvUKB4dWUcQznB22zlbRc2NXvqAEg2zXU3PQjTZcv9GlDxNY7pQIDAQAB',
+                '云账户公钥'),
+               ('1001', 'baseUrl', 'https://api-service.yunzhanghu.com', '正式环境基地址'),
+               ('1001', 'sandBoxBaseUrl', 'https://api-service.yunzhanghu.com/sandbox', '沙箱环境基地址'),
+               ('1001', 'color', '#8171ff', '签名合约主题颜色'),
+               ('1001', 'signCallBackUrl', 'https://callback-saas.ypszkj.com/api/yunzhanghu/signContactCallBack',
+                '签约回调地址'),
+               ('1001', 'signRedirectUrl', 'https://www.baidu.com/', '签约完成后跳转地址'),
+               ('1001', 'withdrawCallBackUrl',
+                'https://callback-saas.ypszkj.com/api/yunzhanghu/placeBatchOrderCallBack', '提现回调地址');
+    </insert>
+
+    <select id="listParamByThirdNo" resultMap="BaseResultMap">
+        select `third_party_no`, `param_name`, `param_value`, `param_info`
+        from third_party_param
+        where third_party_no = #{thirdPartyNo}
+    </select>
+
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.party.thirdpartyproject.mapper.ThirdPartyInfoMapper">
+
+
+    <insert id="initTableRecord">
+        INSERT INTO `third_party`.`third_party_info` (`third_party_no`, `third_party_name`, `third_party_info`)
+        VALUES ('1001', '云账户', '云账户签约平台，可以进行签约，提现，交税等业务'),
+               ('1002', '儒丰伟', '儒丰伟平台，功能类似云账户，但是现在不用了');
+    </insert>
+
+
+</mapper>
